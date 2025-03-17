@@ -9,11 +9,12 @@ type Product = {
   image: string;
   price: number;
   rating: { rate: number };
+  quantity?: number;
 };
 
 export default function FeatureProducts() {
   const [products, setProducts] = useState<Product[]>([]);
-  const { addToCart } = useCart(); // ✅ Get AddToCart Function
+  const { addToCart } = useCart(); 
 
   useEffect(() => {
     axios
@@ -70,7 +71,7 @@ export default function FeatureProducts() {
               <div className="mt-2">
                 <button
                   className="w-full bg-teal-500 cursor-pointer text-white py-2 rounded-md hover:bg-teal-600 transition"
-                  onClick={() => addToCart(product)}
+                  onClick={() => addToCart({ ...product, quantity: 1 })}
                 >
                   Add To Cart
                 </button>

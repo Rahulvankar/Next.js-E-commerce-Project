@@ -23,9 +23,14 @@ export default function FAQ() {
     }
   ];
 
-  const [openIndex, setOpenIndex] = useState(null);
+  // const [openIndex, setOpenIndex] = useState(null);
 
-  const toggleFAQ = (index) => {
+  // const toggleFAQ = (index) => {
+  //   setOpenIndex(openIndex === index ? null : index);
+  // };
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  const toggleFAQ = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
   };
 

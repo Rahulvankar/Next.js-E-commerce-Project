@@ -1,13 +1,17 @@
 "use client";
 import { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import { Swiper as SwiperClass } from 'swiper';
+
 
 export default function CustomSlider() {
-    const swiperRef = useRef(null);
+    // const swiperRef = useRef(null);
+    const swiperRef = useRef<SwiperClass | null>(null);
+
 
     const slides = [
         {

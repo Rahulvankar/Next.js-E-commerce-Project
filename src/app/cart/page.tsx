@@ -14,7 +14,7 @@ export default function CartPage() {
   if (!isClient) return null;
 
   const subtotal = cart.reduce((acc, item) => acc + Number(item.price) * Number(item.quantity), 0);
-  const shipping = 0; 
+  const shipping = 0;
   const grandTotal = subtotal + shipping;
 
   return (
@@ -42,9 +42,9 @@ export default function CartPage() {
                   <div className="col-span-2 flex items-center gap-4 text-left">
                     <img src={item.image} alt={item.title} className="w-[105px] h-[120px] rounded-md object-cover" />
                     <div>
-                      <h3 className="font-semibold text-lg text-[#1E293B] font-[18px]">{item.title}</h3>
-                      <p className="text-sm text-gray-500">Color: {item.color || "N/A"}</p>
-                      <p className="text-sm text-gray-500">Size: {item.size || "N/A"}</p>
+                      <h3 className=" text-lg text-[#1E293B] font-[18px]">{item.title}</h3>
+                      <p className="text-sm text-gray-500">Color: {"N/A"}</p>
+                      <p className="text-sm text-gray-500">Size: {"N/A"}</p>
                     </div>
                   </div>
 
@@ -106,7 +106,7 @@ export default function CartPage() {
                       <p className="text-[#1E293B]">Shipping</p>
                       <p className=" text-[#1E293B]">Rs.{shipping}</p>
                     </div>
-                    <hr className="my-2 border-dotted border-[#14B8A6]"/>
+                    <hr className="my-2 border-dotted border-[#14B8A6]" />
                     <div className="flex justify-between text-xl">
                       <p className="text-[#1E293B]">Grand Total</p>
                       <p className="text-[#1E293B]">Rs.{(grandTotal.toFixed(2))}</p>
